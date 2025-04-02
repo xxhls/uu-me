@@ -4,12 +4,18 @@
   "version": "1.0.0",
   "scripts": {
     "build": "rsbuild build",
+    "prebuild": "npm run generate-routes",
     "dev": "rsbuild dev --open",
+    "predev": "npm run generate-routes",
     "format": "prettier --write .",
     "lint": "eslint .",
-    "preview": "rsbuild preview"
+    "preview": "rsbuild preview",
+    "generate-routes": "tsr generate",
+    "watch-routes": "tsr watch"
   },
   "dependencies": {
+    "@tanstack/react-router": "^1.114.29",
+    "@tanstack/react-router-devtools": "^1.114.25",
     "react": "18.3.1",
     "react-dom": "18.3.1"
   },
@@ -18,6 +24,8 @@
     "@eslint/js": "9.23.0",
     "@rsbuild/core": "1.3.2",
     "@rsbuild/plugin-react": "1.1.1",
+    "@tanstack/router-cli": "^1.16.5",
+    "@tanstack/router-plugin": "^1.114.25",
     "@types/react": "18.3.11",
     "@types/react-dom": "18.3.1",
     "eslint": "9.23.0",
